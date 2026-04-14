@@ -14,8 +14,8 @@
 <!-- Main header (below topbar: top-8) -->
 <header class="fixed top-8 w-full z-40 bg-[#FAFAFA]/70 dark:bg-[#0a0a0a]/80 backdrop-blur-xl transition-colors duration-500 border-b border-black/5 dark:border-white/8">
     <div class="max-w-[1400px] mx-auto px-6 h-16 flex items-center justify-between relative">
-        <a href="<?= $basePath ?>" class="font-display font-medium tracking-tight text-base z-50">
-            <b>Digitalsky</b>
+        <a href="<?= $basePath ?>" class="font-display font-medium tracking-tight text-base z-50 flex items-center gap-2 text-slate-900 dark:text-white">
+            <img src="<?= $basePath ?>/static/img/digitalsky-black-white.png" style="width: 28px; border:1px solid white; border-radius:5px; opacity:0.8" ><b>Digitalsky</b>
         </a>
 
         <!-- Desktop nav — centered -->

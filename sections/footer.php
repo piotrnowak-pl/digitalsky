@@ -18,8 +18,8 @@
 
         <div class="flex flex-col md:flex-row justify-between items-center gap-8">
             <div>
-                <div class="font-display font-medium tracking-tight text-xl text-white mb-2">
-                    <b>Digitalsky</b>
+                <div class="font-display font-medium tracking-tight text-xl text-white mb-2 flex items-center gap-2">
+                    <img src="<?= $basePath ?>/static/img/digitalsky-black-white.png" style="width: 28px; border:1px solid white; border-radius:5px; opacity:0.8" > <b>Digitalsky</b>
                 </div>
                 <div class="flex flex-col sm:flex-row gap-3 text-sm text-slate-500">
                     <?php $footerEmail = $lang === 'pl' ? 'biuro@digitalsky.pl' : 'contact@digitalsky.pl'; ?>

@@ -199,11 +199,11 @@
             </div>
 
             <!-- ── DESKTOP SVG (hidden on mobile) ── -->
-            <!-- Nodes: 210×80px, icon circle r=17, icon scale=1.1, text offset from left edge = 16px padding + circle area -->
-            <!-- Layout X: inputs x=20 (right edge=230), AI core x=330–560, outputs x=670 (right edge=880) -->
+            <!-- Nodes: 230×80px, icon circle r=17, icon scale=1.1, left padding 1rem (16px) -->
+            <!-- Layout X: inputs x=20 (right edge=250), AI core x=340–580, outputs x=690 (right edge=920) -->
             <!-- Layout Y (3 rows, viewBox=360): row1 cY=50, row2 cY=180, row3 cY=310  [y=row-40, h=80] -->
             <div class="hidden md:block w-full overflow-x-auto">
-                <svg viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-[900px] mx-auto block" aria-label="AI integration architecture diagram" role="img">
+                <svg viewBox="0 0 940 360" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-[940px] mx-auto block" aria-label="AI integration architecture diagram" role="img">
                     <defs>
                         <linearGradient id="aiGradGrey" x1="0%" y1="0%" x2="100%" y2="100%">
                             <stop offset="0%" stop-color="#f1f5f9"/>
@@ -236,87 +236,87 @@
                         </style>
                     </defs>
 
-                    <!-- ── Input nodes 210×80, cY: 50 / 180 / 310 ── -->
+                    <!-- ── Input nodes 230×80, cY: 50 / 180 / 310 ── -->
 
                     <!-- CRM — users icon — y=10, cY=50 -->
-                    <rect x="20" y="10" width="210" height="80" rx="14" fill="url(#aiGradGrey)" stroke="#cbd5e1" stroke-width="1.5"/>
-                    <circle cx="38" cy="50" r="17" fill="rgba(100,116,139,0.15)"/>
+                    <rect x="20" y="10" width="230" height="80" rx="14" fill="url(#aiGradGrey)" stroke="#cbd5e1" stroke-width="1.5"/>
+                    <circle cx="48" cy="50" r="17" fill="rgba(100,116,139,0.15)"/>
                     <!-- lucide users — 22×22, centred: translate(38-11, 50-11) -->
-                    <g transform="translate(27,39) scale(1.1)" stroke="#475569" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                    <g transform="translate(36,36) scale(1.1)" width="18" height="15" stroke="#475569" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none">
                         <path d="M16 11c1.7 0 3-1.3 3-3s-1.3-3-3-3"/><path d="M19 16c0-1.9-1.3-3.5-3-4"/><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
                     </g>
-                    <text x="66" y="45" font-family="Satoshi,sans-serif" font-size="13" font-weight="500" class="ai-in-text"><?= htmlspecialchars($t['ai']['node_crm']) ?></text>
-                    <text x="66" y="63" font-family="General Sans,sans-serif" font-size="11" class="ai-in-sub">Salesforce · HubSpot · inne...</text>
+                    <text x="76" y="45" font-family="Satoshi,sans-serif" font-size="14" font-weight="500" class="ai-in-text"><?= htmlspecialchars($t['ai']['node_crm']) ?></text>
+                    <text x="76" y="63" font-family="General Sans,sans-serif" font-size="12" class="ai-in-sub">Salesforce · HubSpot · inne...</text>
 
                     <!-- ERP / DB — database icon — y=140, cY=180 -->
-                    <rect x="20" y="140" width="210" height="80" rx="14" fill="url(#aiGradGrey)" stroke="#cbd5e1" stroke-width="1.5"/>
-                    <circle cx="38" cy="180" r="17" fill="rgba(100,116,139,0.15)"/>
+                    <rect x="20" y="140" width="230" height="80" rx="14" fill="url(#aiGradGrey)" stroke="#cbd5e1" stroke-width="1.5"/>
+                    <circle cx="48" cy="180" r="17" fill="rgba(100,116,139,0.15)"/>
                     <!-- lucide database — translate(27,169) scale(1.1) -->
-                    <g transform="translate(27,169) scale(1.1)" stroke="#475569" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                    <g transform="translate(39,169) scale(1.1)" width="18" height="15" stroke="#475569" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none">
                         <ellipse cx="8" cy="4" rx="7" ry="2.5"/><path d="M1 4v6c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5V4"/><path d="M1 10v6c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-6"/>
                     </g>
-                    <text x="66" y="175" font-family="Satoshi,sans-serif" font-size="13" font-weight="500" class="ai-in-text"><?= htmlspecialchars($t['ai']['node_erp']) ?></text>
-                    <text x="66" y="193" font-family="General Sans,sans-serif" font-size="11" class="ai-in-sub">PostgreSQL · MySQL · REST</text>
+                    <text x="76" y="175" font-family="Satoshi,sans-serif" font-size="14" font-weight="500" class="ai-in-text"><?= htmlspecialchars($t['ai']['node_erp']) ?></text>
+                    <text x="76" y="193" font-family="General Sans,sans-serif" font-size="12" class="ai-in-sub">PostgreSQL · MySQL · REST</text>
 
                     <!-- Email / Comms — mail icon — y=270, cY=310 -->
-                    <rect x="20" y="270" width="210" height="80" rx="14" fill="url(#aiGradGrey)" stroke="#cbd5e1" stroke-width="1.5"/>
-                    <circle cx="38" cy="310" r="17" fill="rgba(100,116,139,0.15)"/>
+                    <rect x="20" y="270" width="230" height="80" rx="14" fill="url(#aiGradGrey)" stroke="#cbd5e1" stroke-width="1.5"/>
+                    <circle cx="48" cy="310" r="17" fill="rgba(100,116,139,0.15)"/>
                     <!-- lucide mail — translate(27,299) scale(1.1) -->
-                    <g transform="translate(27,299) scale(1.1)" stroke="#475569" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                    <g transform="translate(38,301) scale(1.1)" width="18" height="15" stroke="#475569" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none">
                         <rect x="1" y="2" width="16" height="13" rx="2"/><path d="M1 5l7 5 7-5"/>
                     </g>
-                    <text x="66" y="305" font-family="Satoshi,sans-serif" font-size="13" font-weight="500" class="ai-in-text"><?= htmlspecialchars($t['ai']['node_email']) ?></text>
-                    <text x="66" y="323" font-family="General Sans,sans-serif" font-size="11" class="ai-in-sub">Gmail · Outlook · Slack</text>
+                    <text x="76" y="305" font-family="Satoshi,sans-serif" font-size="14" font-weight="500" class="ai-in-text"><?= htmlspecialchars($t['ai']['node_email']) ?></text>
+                    <text x="76" y="323" font-family="General Sans,sans-serif" font-size="12" class="ai-in-sub">Gmail · Outlook · Slack</text>
 
                     <!-- ── Arrows: inputs → AI core ── -->
-                    <line x1="232" y1="50"  x2="330" y2="165" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrowBlue)" class="ai-line"/>
-                    <line x1="232" y1="180" x2="330" y2="180" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrowBlue)" class="ai-line"/>
-                    <line x1="232" y1="310" x2="330" y2="195" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrowBlue)" class="ai-line"/>
+                    <line x1="252" y1="50"  x2="340" y2="165" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrowBlue)" class="ai-line"/>
+                    <line x1="252" y1="180" x2="340" y2="180" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrowBlue)" class="ai-line"/>
+                    <line x1="252" y1="310" x2="340" y2="195" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrowBlue)" class="ai-line"/>
 
                     <!-- ── AI Core — centred in 360px viewBox ── -->
-                    <rect x="330" y="100" width="240" height="160" rx="20" fill="url(#aiGradBlue)" filter="url(#aiGlow)" stroke="#60a5fa" stroke-width="1.5"/>
-                    <rect x="320" y="90"  width="260" height="180" rx="24" fill="none" stroke="#2563eb" stroke-width="1" stroke-opacity="0.3" stroke-dasharray="6 5"/>
-                    <circle cx="450" cy="158" r="30" fill="rgba(255,255,255,0.12)"/>
-                    <text x="450" y="166" text-anchor="middle" font-family="sans-serif" font-size="24" fill="white">✦</text>
-                    <text x="450" y="212" text-anchor="middle" font-family="Satoshi,sans-serif" font-size="16" font-weight="600" fill="white"><?= htmlspecialchars($t['ai']['node_ai']) ?></text>
-                    <text x="450" y="232" text-anchor="middle" font-family="General Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.75)">GPT-4 · Claude · Fine-tuned LLM</text>
+                    <rect x="340" y="100" width="240" height="160" rx="20" fill="url(#aiGradBlue)" filter="url(#aiGlow)" stroke="#60a5fa" stroke-width="1.5"/>
+                    <rect x="330" y="90"  width="260" height="180" rx="24" fill="none" stroke="#2563eb" stroke-width="1" stroke-opacity="0.3" stroke-dasharray="6 5"/>
+                    <circle cx="460" cy="158" r="30" fill="rgba(255,255,255,0.12)"/>
+                    <text x="460" y="166" text-anchor="middle" font-family="sans-serif" font-size="25" fill="white">✦</text>
+                    <text x="460" y="212" text-anchor="middle" font-family="Satoshi,sans-serif" font-size="17" font-weight="600" fill="white"><?= htmlspecialchars($t['ai']['node_ai']) ?></text>
+                    <text x="460" y="232" text-anchor="middle" font-family="General Sans,sans-serif" font-size="12" fill="rgba(255,255,255,0.75)">GPT-4 · Claude · Fine-tuned LLM</text>
 
                     <!-- ── Arrows: AI core → outputs ── -->
-                    <line x1="571" y1="165" x2="668" y2="50"  stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrowBlueOut)" class="ai-line-out"/>
-                    <line x1="571" y1="180" x2="668" y2="180" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrowBlueOut)" class="ai-line-out"/>
-                    <line x1="571" y1="195" x2="668" y2="310" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrowBlueOut)" class="ai-line-out"/>
+                    <line x1="581" y1="165" x2="688" y2="50"  stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrowBlueOut)" class="ai-line-out"/>
+                    <line x1="581" y1="180" x2="688" y2="180" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrowBlueOut)" class="ai-line-out"/>
+                    <line x1="581" y1="195" x2="688" y2="310" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrowBlueOut)" class="ai-line-out"/>
 
-                    <!-- ── Output nodes 210×80, cY: 50 / 180 / 310, x=670 ── -->
+                    <!-- ── Output nodes 230×80, cY: 50 / 180 / 310, x=690 ── -->
 
                     <!-- Automated Actions — zap icon — y=10, cY=50 -->
-                    <rect x="670" y="10" width="210" height="80" rx="14" fill="url(#aiGradBlueOut)" stroke="#1d4ed8" stroke-width="1.5"/>
-                    <circle cx="688" cy="50" r="17" fill="rgba(255,255,255,0.15)"/>
+                    <rect x="690" y="10" width="230" height="80" rx="14" fill="url(#aiGradBlueOut)" stroke="#1d4ed8" stroke-width="1.5"/>
+                    <circle cx="718" cy="50" r="17" fill="rgba(255,255,255,0.15)"/>
                     <!-- lucide zap — translate(677,39) scale(1.1) -->
-                    <g transform="translate(677,39) scale(1.1)" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                    <g transform="translate(705,36) scale(1.1)" width="18" height="15" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none">
                         <path d="M13 2L4.5 13H11L9 22l8.5-11H12L13 2z"/>
                     </g>
-                    <text x="716" y="45" font-family="Satoshi,sans-serif" font-size="13" font-weight="500" fill="white"><?= htmlspecialchars($t['ai']['node_out1']) ?></text>
-                    <text x="716" y="63" font-family="General Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.7)">triggers · webhooks · tasks</text>
+                    <text x="746" y="45" font-family="Satoshi,sans-serif" font-size="14" font-weight="500" fill="white"><?= htmlspecialchars($t['ai']['node_out1']) ?></text>
+                    <text x="746" y="63" font-family="General Sans,sans-serif" font-size="12" fill="rgba(255,255,255,0.7)">triggers · webhooks · tasks</text>
 
                     <!-- Insights & Alerts — bar-chart-2 icon — y=140, cY=180 -->
-                    <rect x="670" y="140" width="210" height="80" rx="14" fill="url(#aiGradBlueOut)" stroke="#1d4ed8" stroke-width="1.5"/>
-                    <circle cx="688" cy="180" r="17" fill="rgba(255,255,255,0.15)"/>
+                    <rect x="690" y="140" width="230" height="80" rx="14" fill="url(#aiGradBlueOut)" stroke="#1d4ed8" stroke-width="1.5"/>
+                    <circle cx="718" cy="180" r="17" fill="rgba(255,255,255,0.15)"/>
                     <!-- lucide bar-chart-2 — translate(677,169) scale(1.1) -->
-                    <g transform="translate(677,169) scale(1.1)" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                    <g transform="translate(707,169) scale(1.1)" width="18" height="15" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none">
                         <line x1="6" y1="16" x2="6" y2="8"/><line x1="10" y1="16" x2="10" y2="3"/><line x1="14" y1="16" x2="14" y2="11"/><line x1="3" y1="16" x2="17" y2="16"/>
                     </g>
-                    <text x="716" y="175" font-family="Satoshi,sans-serif" font-size="13" font-weight="500" fill="white"><?= htmlspecialchars($t['ai']['node_out2']) ?></text>
-                    <text x="716" y="193" font-family="General Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.7)">dashboards · email · Slack</text>
+                    <text x="746" y="175" font-family="Satoshi,sans-serif" font-size="14" font-weight="500" fill="white"><?= htmlspecialchars($t['ai']['node_out2']) ?></text>
+                    <text x="746" y="193" font-family="General Sans,sans-serif" font-size="12" fill="rgba(255,255,255,0.7)">dashboards · email · Slack</text>
 
                     <!-- Translations — globe icon — y=270, cY=310 -->
-                    <rect x="670" y="270" width="210" height="80" rx="14" fill="url(#aiGradBlueOut)" stroke="#1d4ed8" stroke-width="1.5"/>
-                    <circle cx="688" cy="310" r="17" fill="rgba(255,255,255,0.15)"/>
+                    <rect x="690" y="270" width="230" height="80" rx="14" fill="url(#aiGradBlueOut)" stroke="#1d4ed8" stroke-width="1.5"/>
+                    <circle cx="718" cy="310" r="17" fill="rgba(255,255,255,0.15)"/>
                     <!-- lucide globe — translate(677,299) scale(1.1) -->
-                    <g transform="translate(677,299) scale(1.1)" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                    <g transform="translate(707,300) scale(1.1)" width="18" height="15" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none">
                         <circle cx="9" cy="9" r="8"/><path d="M1 9h16"/><path d="M9 1a13 13 0 0 1 3 8 13 13 0 0 1-3 8 13 13 0 0 1-3-8 13 13 0 0 1 3-8z"/>
                     </g>
-                    <text x="716" y="305" font-family="Satoshi,sans-serif" font-size="13" font-weight="500" fill="white"><?= htmlspecialchars($t['ai']['node_out3']) ?></text>
-                    <text x="716" y="323" font-family="General Sans,sans-serif" font-size="11" fill="rgba(255,255,255,0.7)">EN · PL · DE · FR · +</text>
+                    <text x="746" y="305" font-family="Satoshi,sans-serif" font-size="14" font-weight="500" fill="white"><?= htmlspecialchars($t['ai']['node_out3']) ?></text>
+                    <text x="746" y="323" font-family="General Sans,sans-serif" font-size="12" fill="rgba(255,255,255,0.7)">EN · PL · DE · FR · +</text>
                 </svg>
             </div>
         </div>

@@ -79,6 +79,27 @@ $canonical = $lang === 'en' ? $baseUrl . '/' : $baseUrl . '/' . $lang . '/';
     <link rel="canonical" href="<?= $canonical ?>">
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= $basePath ?>/static/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= $basePath ?>/static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="<?= $basePath ?>/static/favicon/favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="<?= $basePath ?>/static/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="<?= $basePath ?>/static/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="<?= $basePath ?>/static/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="<?= $basePath ?>/static/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="<?= $basePath ?>/static/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="<?= $basePath ?>/static/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="<?= $basePath ?>/static/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="<?= $basePath ?>/static/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?= $basePath ?>/static/favicon/apple-icon-180x180.png">
+    <link rel="android-touch-icon" sizes="36x36" href="<?= $basePath ?>/static/favicon/android-icon-36x36.png">
+    <link rel="android-touch-icon" sizes="48x48" href="<?= $basePath ?>/static/favicon/android-icon-48x48.png">
+    <link rel="android-touch-icon" sizes="72x72" href="<?= $basePath ?>/static/favicon/android-icon-72x72.png">
+    <link rel="android-touch-icon" sizes="96x96" href="<?= $basePath ?>/static/favicon/android-icon-96x96.png">
+    <link rel="android-touch-icon" sizes="144x144" href="<?= $basePath ?>/static/favicon/android-icon-144x144.png">
+    <link rel="android-touch-icon" sizes="192x192" href="<?= $basePath ?>/static/favicon/android-icon-192x192.png">
+    <link rel="manifest" href="<?= $basePath ?>/static/favicon/manifest.json">
+
     <!-- hreflang for all language versions -->
     <link rel="alternate" hreflang="en" href="<?= $baseUrl ?>/">
     <link rel="alternate" hreflang="pl" href="<?= $baseUrl ?>/pl/">
@@ -91,13 +112,13 @@ $canonical = $lang === 'en' ? $baseUrl . '/' : $baseUrl . '/' . $lang . '/';
     <meta property="og:url" content="<?= $canonical ?>">
     <meta property="og:title" content="<?= htmlspecialchars($t['meta']['og_title']) ?>">
     <meta property="og:description" content="<?= htmlspecialchars($t['meta']['description']) ?>">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop">
+    <meta property="og:image" content="<?= $basePath ?>static/img/hero-dashboard.jpg">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="<?= htmlspecialchars($t['meta']['og_title']) ?>">
     <meta name="twitter:description" content="<?= htmlspecialchars($t['meta']['description']) ?>">
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop">
+    <meta name="twitter:image" content="<?= $basePath ?>static/img/hero-dashboard.jpg">
 
     <!-- Schema.org -->
     <script type="application/ld+json">

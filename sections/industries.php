@@ -28,7 +28,7 @@
         </div>
         
         <div class="relative h-[600px] rounded-[1rem] overflow-hidden shadow-2xl">
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=2000&amp;auto=format&amp;fit=crop" class="absolute inset-0 w-full h-full object-cover scale-105 hover:scale-100 transition-transform duration-1000 grayscale opacity-90" alt="Growth and Analytics">
+            <img src="<?= $basePath ?>static/img/industries-growth.jpg" class="absolute inset-0 w-full h-full object-cover scale-105 hover:scale-100 transition-transform duration-1000 grayscale opacity-90" alt="Growth and Analytics">
             <div class="absolute inset-0 bg-blue-600/10 mix-blend-overlay"></div>
         </div>
     </div>

@@ -32,6 +32,6 @@
             </div>
         </div>
         
-        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&amp;w=2000&amp;auto=format&amp;fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-30 dark:opacity-40 mix-blend-overlay group-hover:scale-105 transition-transform duration-1000 grayscale" alt="Dashboard">
+        <img src="<?= $basePath ?>static/img/hero-dashboard.jpg" class="absolute inset-0 w-full h-full object-cover opacity-30 dark:opacity-40 mix-blend-overlay group-hover:scale-105 transition-transform duration-1000 grayscale" alt="Dashboard">
     </div>
 </section>
