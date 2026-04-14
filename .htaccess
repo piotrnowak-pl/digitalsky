@@ -1,0 +1,12 @@
+RewriteEngine On
+
+# Skip real files and directories
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Language routing: pl/, de/, fr/ → index.php?lang=xx
+RewriteRule ^(pl|de|fr)/?$ index.php?lang=$1 [L,QSA]
+
+# Default (EN) — directory root
+RewriteRule ^$ index.php?lang=en [L,QSA]
