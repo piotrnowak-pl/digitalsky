@@ -61,7 +61,7 @@
   "process": {
     "h2": "Jak pracujemy — prosto, bezpośrednio, skutecznie",
     "sub": "Żadnego długiego wdrażania. Żadnych warstw agencyjnych. Żadnych nieporozumień. Tylko jasna ścieżka od problemu do działającego rozwiązania.",
-    "step1_h": "Odkrywanie",
+    "step1_h": "Analiza",
     "step1_p": "Słuchamy, mapujemy obecny chaos i skrupulatnie analizujemy Twoje przepływy danych — zanim napiszemy choć jedną linię kodu.",
     "step2_h": "Strategia",
     "step2_p": "Proponujemy konkretne rozwiązania z jasną architekturą, poparte testowalnymi prototypami, które możesz ocenić już w pierwszym tygodniu.",
@@ -137,6 +137,9 @@
     "label_company": "Firma",
     "label_email": "Email służbowy",
     "label_msg": "Największy problem procesowy",
+    "placeholder_name": "Jan Kowalski",
+    "placeholder_company": "Firma Sp. z o.o.",
+    "placeholder_phone": "+48 500 000 000",
     "placeholder_msg": "Opisz co spowalnia Twój zespół — Excel, rozłączone systemy, ręczne przepisywanie danych…",
     "submit": "Zacznijmy rozmowę",
     "or": "Lub skontaktuj się bezpośrednio:",
@@ -144,7 +147,14 @@
     "success": "Wiadomość wysłana! Odezwiemy się w ciągu 1 dnia roboczego.",
     "error": "Coś poszło nie tak. Napisz do nas bezpośrednio na contact@digitalsky.pl",
     "validation_required": "Proszę wypełnić imię, email i opis projektu.",
-    "validation_email": "Proszę podać poprawny adres email."
+    "validation_email": "Proszę podać poprawny adres email.",
+    "label_phone": "Telefon",
+    "label_preferred": "Preferowana forma kontaktu",
+    "pref_email": "Email",
+    "pref_phone": "Telefon",
+    "pref_whatsapp": "WhatsApp",
+    "pref_telegram": "Telegram",
+    "pref_signal": "Signal"
   },
   "ai": {
     "tag": "Integracje AI",

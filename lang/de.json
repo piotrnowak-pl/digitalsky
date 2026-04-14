@@ -137,6 +137,9 @@
     "label_company": "Unternehmen",
     "label_email": "Geschäftliche E-Mail",
     "label_msg": "Ihr größter Prozess-Engpass",
+    "placeholder_name": "Max Mustermann",
+    "placeholder_company": "Mustermann GmbH",
+    "placeholder_phone": "+49 151 00000000",
     "placeholder_msg": "Erzählen Sie uns, was Ihr Team ausbremst — Excel-Chaos, getrennte Systeme, manuelle Dateneingabe…",
     "submit": "Gespräch beginnen",
     "or": "Oder kontaktieren Sie uns direkt:",
@@ -144,7 +147,14 @@
     "success": "Nachricht gesendet! Wir melden uns innerhalb von 1 Werktag.",
     "error": "Etwas ist schiefgelaufen. Schreiben Sie uns direkt an contact@digitalsky.pl",
     "validation_required": "Bitte füllen Sie Name, E-Mail und Projektdetails aus.",
-    "validation_email": "Bitte geben Sie eine gültige E-Mail-Adresse ein."
+    "validation_email": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+    "label_phone": "Telefon",
+    "label_preferred": "Bevorzugte Kontaktart",
+    "pref_email": "E-Mail",
+    "pref_phone": "Telefon",
+    "pref_whatsapp": "WhatsApp",
+    "pref_telegram": "Telegram",
+    "pref_signal": "Signal"
   },
   "ai": {
     "tag": "KI-Integration",

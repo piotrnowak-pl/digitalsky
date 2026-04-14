@@ -5,7 +5,7 @@
             <?= $t['hero']['h1'] ?> <br class="hidden md:block">
             <span class="text-slate-400 dark:text-slate-600"><?= $t['hero']['h1_sub'] ?></span>
         </h1>
-        <p class="hero-desc text-xl md:text-3xl text-slate-500 dark:text-slate-400 max-w-3xl leading-relaxed mb-12 font-normal">
+        <p class="hero-desc text-base text-slate-500 dark:text-slate-400 max-w-4xl leading-relaxed mb-12 font-normal">
             <?= $t['hero']['p'] ?>
         </p>
         <div class="flex flex-row flex-wrap gap-4 items-center justify-start mb-16">

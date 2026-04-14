@@ -61,7 +61,7 @@
   "process": {
     "h2": "Comment nous travaillons — simple, direct, efficace",
     "sub": "Pas de long onboarding. Pas de couches d'agence. Pas de malentendus. Juste un chemin clair du problème à la solution fonctionnelle.",
-    "step1_h": "Découverte",
+    "step1_h": "Analyse",
     "step1_p": "Nous écoutons, cartographions votre chaos actuel et analysons méticuleusement vos flux de données — avant d'écrire une seule ligne de code.",
     "step2_h": "Stratégie",
     "step2_p": "Des solutions concrètes avec une architecture claire, appuyées par des prototypes testables que vous pouvez évaluer dès la première semaine.",
@@ -137,6 +137,9 @@
     "label_company": "Entreprise",
     "label_email": "E-mail professionnel",
     "label_msg": "Votre plus gros goulot d'étranglement",
+    "placeholder_name": "Jean Dupont",
+    "placeholder_company": "Dupont SAS",
+    "placeholder_phone": "+33 6 00 00 00 00",
     "placeholder_msg": "Dites-nous ce qui ralentit votre équipe — enfer Excel, systèmes déconnectés, saisie manuelle…",
     "submit": "Commencer la conversation",
     "or": "Ou contactez-nous directement :",
@@ -144,7 +147,14 @@
     "success": "Message envoyé ! Nous reviendrons vers vous sous 1 jour ouvré.",
     "error": "Une erreur s'est produite. Écrivez-nous directement à contact@digitalsky.pl",
     "validation_required": "Veuillez remplir votre nom, e-mail et les détails du projet.",
-    "validation_email": "Veuillez entrer une adresse e-mail valide."
+    "validation_email": "Veuillez entrer une adresse e-mail valide.",
+    "label_phone": "Téléphone",
+    "label_preferred": "Mode de contact préféré",
+    "pref_email": "E-mail",
+    "pref_phone": "Téléphone",
+    "pref_whatsapp": "WhatsApp",
+    "pref_telegram": "Telegram",
+    "pref_signal": "Signal"
   },
   "ai": {
     "tag": "Intégration IA",

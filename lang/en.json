@@ -61,7 +61,7 @@
   "process": {
     "h2": "How We Work — Simple, Direct, Effective",
     "sub": "No long onboarding. No agency layers. No miscommunication. Just a clear path from problem to working solution.",
-    "step1_h": "Discovery",
+    "step1_h": "Analysis",
     "step1_p": "We listen, map your current chaos, and meticulously analyze your data flows — before writing a single line of code.",
     "step2_h": "Strategy",
     "step2_p": "Propose exact solutions with clear architecture backed by testable prototypes you can evaluate in week one.",
@@ -137,6 +137,9 @@
     "label_company": "Company",
     "label_email": "Work Email",
     "label_msg": "Your biggest process bottleneck",
+    "placeholder_name": "Jane Doe",
+    "placeholder_company": "Acme Corp",
+    "placeholder_phone": "+48 500 000 000",
     "placeholder_msg": "Tell us what's slowing your team down — Excel hell, disconnected systems, manual data entry…",
     "submit": "Let's start the conversation",
     "or": "Or contact us directly:",
@@ -144,7 +147,14 @@
     "success": "Message sent! We'll get back to you within 1 business day.",
     "error": "Something went wrong. Please email us directly at contact@digitalsky.pl",
     "validation_required": "Please fill in your name, email and project details.",
-    "validation_email": "Please enter a valid email address."
+    "validation_email": "Please enter a valid email address.",
+    "label_phone": "Phone",
+    "label_preferred": "Preferred contact method",
+    "pref_email": "Email",
+    "pref_phone": "Phone",
+    "pref_whatsapp": "WhatsApp",
+    "pref_telegram": "Telegram",
+    "pref_signal": "Signal"
   },
   "ai": {
     "tag": "AI Integration",

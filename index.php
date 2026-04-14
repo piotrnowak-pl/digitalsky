@@ -1,4 +1,7 @@
 <?php
+// ── Site config ────────────────────────────────────────────────
+$cfg = require __DIR__ . '/contact/config.php';
+
 // ── Base path (auto-detect subdirectory) ───────────────────────
 // Works at root (production) and in subdirectory (dev: /sky/digitalsky/)
 $scriptDir = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME']));
@@ -47,6 +50,20 @@ if ($lang === 'en') {
     // Deep merge: current language on top of EN fallback
     $t = array_replace_recursive($en, $current ?: []);
 }
+
+// ── Fix typographic widows ──────────────────────────────────────
+// Replaces the space after short words (1–3 chars) with &nbsp;
+// so they never hang alone at the start of a new line.
+function fix_widows(mixed $value): mixed {
+    if (is_string($value)) {
+        return preg_replace('/(\s)(\S{1,3})\s+/u', '$1$2&nbsp;', $value);
+    }
+    if (is_array($value)) {
+        return array_map('fix_widows', $value);
+    }
+    return $value;
+}
+$t = fix_widows($t);
 
 // ── Canonical URL helper ───────────────────────────────────────
 $baseUrl = 'https://digitalsky.pl';
@@ -99,16 +116,16 @@ $canonical = $lang === 'en' ? $baseUrl . '/' : $baseUrl . '/' . $lang . '/';
     }
     </script>
     
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="<?= $basePath ?>static/js/tailwind.js"></script>
     <script>
         tailwind.config = {
             darkMode: 'class'
         }
     </script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="<?= $basePath ?>static/js/lucide.js"></script>
     
     <style>
-        @import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500&f[]=general-sans@400,500&display=swap');
+        @import url('<?= $basePath ?>static/css/fonts.css');
         
         body {
             font-family: 'General Sans', sans-serif;
@@ -135,8 +152,8 @@ $canonical = $lang === 'en' ? $baseUrl . '/' : $baseUrl . '/' . $lang . '/';
 
         @media (min-width: 768px) {
             .hero-desc {
-                font-size: 1.3rem;
-                line-height: 1.75rem;
+                font-size: 1.75rem;
+                line-height: 2.7rem;
             }
         }
     </style>
@@ -256,54 +273,95 @@ $canonical = $lang === 'en' ? $baseUrl . '/' : $baseUrl . '/' . $lang . '/';
             valReq:     <?= json_encode($t['contact']['validation_required']) ?>,
             valEmail:   <?= json_encode($t['contact']['validation_email']) ?>
         };
+        const _sendUrl  = <?= json_encode($basePath . 'contact/send.php') ?>;
+        const _csalt    = <?= json_encode($cfg['checksum_salt']) ?>;
+
+        // Checksum: simple hash of salt+name+email+message (djb2-style, 32-bit)
+        function formChecksum(name, email, message) {
+            const str = _csalt + '|' + name.toLowerCase() + '|' + email.toLowerCase() + '|' + message.length;
+            let h = 5381;
+            for (let i = 0; i < str.length; i++) {
+                h = ((h << 5) + h) ^ str.charCodeAt(i);
+                h = h >>> 0; // keep 32-bit unsigned
+            }
+            return h.toString(16);
+        }
+
+        // Status helpers
+        function showSuccess(msg) {
+            const s = document.getElementById('form-status');
+            s.className = '';
+            s.innerHTML = `
+                <div class="mt-4 flex items-start gap-4 bg-green-50 dark:bg-green-500/10 border border-green-200 dark:border-green-500/20 rounded-[1rem] p-5 text-left">
+                    <div class="w-10 h-10 rounded-xl bg-green-100 dark:bg-green-500/20 flex items-center justify-center shrink-0">
+                        <svg class="w-5 h-5 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-green-800 dark:text-green-300 font-display text-base">${msg}</p>
+                    </div>
+                </div>`;
+            s.classList.remove('hidden');
+            s.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function showError(msg) {
+            const s = document.getElementById('form-status');
+            s.className = '';
+            s.innerHTML = `
+                <div class="mt-4 flex items-start gap-4 bg-red-50 dark:bg-red-500/10 border border-red-200 dark:border-red-500/20 rounded-[1rem] p-5 text-left">
+                    <div class="w-10 h-10 rounded-xl bg-red-100 dark:bg-red-500/20 flex items-center justify-center shrink-0">
+                        <svg class="w-5 h-5 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" d="M12 8v4m0 4h.01"/></svg>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-red-800 dark:text-red-300 font-display text-base">${msg}</p>
+                    </div>
+                </div>`;
+            s.classList.remove('hidden');
+            s.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
 
         document.getElementById('contact-form').addEventListener('submit', async function(e) {
             e.preventDefault();
-            const btn    = document.getElementById('form-submit-btn');
-            const status = document.getElementById('form-status');
-            const name     = document.getElementById('name').value.trim();
-            const company  = document.getElementById('company').value.trim();
-            const email    = document.getElementById('email').value.trim();
-            const message  = document.getElementById('message').value.trim();
-            const website  = document.getElementById('hp-website').value.trim(); // honeypot
+            const btn       = document.getElementById('form-submit-btn');
+            const name      = document.getElementById('name').value.trim();
+            const company   = document.getElementById('company').value.trim();
+            const email     = document.getElementById('email').value.trim();
+            const phone     = document.getElementById('phone').value.trim();
+            const message   = document.getElementById('message').value.trim();
+            const website   = document.getElementById('hp-website').value.trim();
+            const preferred = document.querySelector('input[name="preferred_contact"]:checked')?.value || 'email';
 
-            status.className = '';
-            status.textContent = '';
-            if (!name || !email || !message) {
-                status.textContent = _t.valReq;
-                status.className = 'mt-4 text-center text-sm text-red-500 font-medium';
-                return;
-            }
+            document.getElementById('form-status').classList.add('hidden');
+
+            if (!name || !email || !message) { showError(_t.valReq); return; }
             const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRx.test(email)) {
-                status.textContent = _t.valEmail;
-                status.className = 'mt-4 text-center text-sm text-red-500 font-medium';
-                return;
-            }
+            if (!emailRx.test(email)) { showError(_t.valEmail); return; }
+
+            // Compute & inject checksum token
+            document.getElementById('form-token').value = formChecksum(name, email, message);
 
             btn.disabled = true;
-            btn.textContent = _t.sending;
+            btn.innerHTML = `<svg class="animate-spin w-4 h-4" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/></svg> ${_t.sending}`;
 
             try {
-                const res = await fetch('send.php', {
+                const res = await fetch(_sendUrl, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ name, company, email, message, website })
+                    body: JSON.stringify({ name, company, email, phone, message, website, preferred,
+                                          token: document.getElementById('form-token').value })
                 });
                 const data = await res.json();
                 if (data.ok) {
-                    status.innerHTML = '&#10003; ' + _t.success;
-                    status.className = 'mt-4 text-center text-sm text-green-600 dark:text-green-400 font-medium';
+                    showSuccess(_t.success);
                     document.getElementById('contact-form').reset();
                 } else {
                     throw new Error(data.error || 'Unknown error');
                 }
             } catch (err) {
-                status.textContent = _t.error;
-                status.className = 'mt-4 text-center text-sm text-red-500 font-medium';
+                showError(_t.error);
             } finally {
                 btn.disabled = false;
-                btn.textContent = _t.submit;
+                btn.innerHTML = `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg> ${_t.submit}`;
             }
         });
     </script>
