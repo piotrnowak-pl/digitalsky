@@ -22,9 +22,10 @@
                     <b>Digitalsky</b>
                 </div>
                 <div class="flex flex-col sm:flex-row gap-3 text-sm text-slate-500">
-                    <a href="mailto:contact@digitalsky.pl" class="hover:text-slate-300 transition-colors flex items-center gap-1.5">
+                    <?php $footerEmail = $lang === 'pl' ? 'biuro@digitalsky.pl' : 'contact@digitalsky.pl'; ?>
+                    <a href="mailto:<?= $footerEmail ?>" class="hover:text-slate-300 transition-colors flex items-center gap-1.5">
                         <i data-lucide="mail" class="w-3.5 h-3.5"></i>
-                        contact@digitalsky.pl
+                        <?= $footerEmail ?>
                     </a>
                     <a href="tel:+48506323709" class="hover:text-slate-300 transition-colors flex items-center gap-1.5">
                         <i data-lucide="phone" class="w-3.5 h-3.5"></i>

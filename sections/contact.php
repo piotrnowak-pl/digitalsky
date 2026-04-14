@@ -1,4 +1,7 @@
-<?php $cfg = require __DIR__ . '/../contact/config.php'; ?>
+<?php 
+    $cfg = require __DIR__ . '/../contact/config.php';
+    $contactEmail = $lang === 'pl' ? 'biuro@digitalsky.pl' : $cfg['contact_email'];
+?>
 <!-- 9. Final CTA / Contact Form -->
 <section id="contact" class="py-32 px-6 max-w-4xl mx-auto text-center">
     <h2 class="font-display text-5xl md:text-7xl tracking-tight font-medium mb-6">
@@ -97,9 +100,9 @@
 
         <div class="pt-4 border-t border-black/5 dark:border-white/5 flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-slate-500">
             <span><?= $t['contact']['or'] ?></span>
-            <a href="mailto:<?= htmlspecialchars($cfg['contact_email']) ?>" class="flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:underline font-medium">
+            <a href="mailto:<?= htmlspecialchars($contactEmail) ?>" class="flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:underline font-medium">
                 <i data-lucide="mail" class="w-4 h-4"></i>
-                <?= htmlspecialchars($cfg['contact_email']) ?>
+                <?= htmlspecialchars($contactEmail) ?>
             </a>
             <a href="tel:<?= htmlspecialchars(str_replace(' ', '', $cfg['contact_phone'])) ?>" class="flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:underline font-medium">
                 <i data-lucide="phone" class="w-4 h-4"></i>

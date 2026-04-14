@@ -118,6 +118,33 @@ $canonical = $lang === 'en' ? $baseUrl . '/' : $baseUrl . '/' . $lang . '/';
     
     <script src="<?= $basePath ?>static/js/tailwind.js"></script>
     <script>
+        window.__statsPoints = 0;
+        (function() {
+            var sec = 0, scrolled = false, interacted = false, clickedContact = false;
+            setInterval(function() { sec++; if (sec >= 10 && window.__statsPoints < 3) window.__statsPoints++; }, 10000);
+            window.addEventListener('scroll', function() {
+                if (!scrolled && document.documentElement.scrollTop + window.innerHeight >= document.documentElement.scrollHeight * 0.5) {
+                    scrolled = true;
+                    if (window.__statsPoints < 5) window.__statsPoints++;
+                }
+            });
+            document.addEventListener('focus', function(e) {
+                if (e.target.matches('input, textarea') && !interacted) {
+                    interacted = true;
+                    if (window.__statsPoints < 6) window.__statsPoints++;
+                }
+            }, true);
+            document.querySelectorAll('[data-contact]').forEach(function(el) {
+                el.addEventListener('click', function() {
+                    if (!clickedContact) {
+                        clickedContact = true;
+                        if (window.__statsPoints < 7) window.__statsPoints++;
+                    }
+                });
+            });
+        })();
+    </script>
+    <script>
         tailwind.config = {
             darkMode: 'class'
         }
@@ -457,6 +484,13 @@ $canonical = $lang === 'en' ? $baseUrl . '/' : $baseUrl . '/' . $lang . '/';
             }
 
             setInterval(goToNext, 5000);
+        })();
+
+        /* ── Statistic ping ──────────────────────────────── */
+        (function() {
+            var bl = navigator.language || navigator.userLanguage || '';
+            var statsPoints = window.__statsPoints || 0;
+            fetch('<?= $basePath ?>data/statistic.php?lang=<?= $lang ?>&country=' + encodeURIComponent(bl.slice(0, 2)) + '&p=' + statsPoints, { method: 'POST', keepalive: true });
         })();
     </script>
 
