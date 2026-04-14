@@ -84,7 +84,7 @@
 
         <div>
             <label for="message" class="block text-sm font-medium mb-2 text-slate-600 dark:text-slate-300"><?= $t['contact']['label_msg'] ?> <span class="text-blue-500">*</span></label>
-            <textarea id="message" name="message" rows="4" required class="w-full bg-slate-50 dark:bg-[#111] border border-transparent focus:border-blue-500 rounded-xl py-3 px-4 text-slate-900 dark:text-white focus:ring-4 focus:ring-blue-500/10 transition-all outline-none resize-none font-normal" placeholder="<?= htmlspecialchars($t['contact']['placeholder_msg']) ?>"></textarea>
+            <textarea id="message" name="message" rows="4" required class="w-full bg-slate-50 dark:bg-[#111] border border-transparent focus:border-blue-500 rounded-xl py-3 px-4 text-slate-900 dark:text-white focus:ring-4 focus:ring-blue-500/10 transition-all outline-none resize-none font-normal"             placeholder="<?= $t['contact']['placeholder_msg'] ?>"></textarea>
         </div>
 
         <button type="submit" id="form-submit-btn" class="w-full bg-[#2D2D2D] text-white font-medium py-4 rounded-xl hover:bg-[#3a3a3a] transition-all duration-300 text-base flex items-center justify-center gap-2">

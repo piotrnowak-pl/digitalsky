@@ -1,5 +1,5 @@
 <!-- 2. Immersive Visual / Problem Section -->
-<section class="py-24 px-6 max-w-[1400px] mx-auto">
+<section class="pt-8 pb-24 px-6 max-w-[1400px] mx-auto">
     <div class="bg-slate-100 dark:bg-[#141414] rounded-[1rem] md:rounded-[1rem] p-8 md:p-16 lg:p-24 overflow-hidden relative group border border-transparent dark:border-white/8">
         <div class="relative z-10">
             <h2 class="font-display text-4xl md:text-5xl lg:text-6xl tracking-tight font-medium mb-6 text-center lg:text-left text-slate-900 dark:text-white mix-blend-difference">

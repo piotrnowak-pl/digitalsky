@@ -156,6 +156,31 @@ $canonical = $lang === 'en' ? $baseUrl . '/' : $baseUrl . '/' . $lang . '/';
                 line-height: 2.7rem;
             }
         }
+
+        /* Hero H1 rotator */
+        #hero-h1-wrap {
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-slide {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            transform: translateY(-50%) translateX(100%);
+            opacity: 0;
+            transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1), opacity 600ms ease;
+            pointer-events: none;
+        }
+        .hero-slide--active {
+            opacity: 1;
+            transform: translateY(-50%) translateX(0);
+            pointer-events: auto;
+        }
+        .hero-slide--exit {
+            opacity: 0;
+            transform: translateY(-50%) translateX(-100%);
+        }
     </style>
 
     <script>
@@ -364,6 +389,75 @@ $canonical = $lang === 'en' ? $baseUrl . '/' : $baseUrl . '/' . $lang . '/';
                 btn.innerHTML = `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg> ${_t.submit}`;
             }
         });
+
+        /* ── Hero H1 rotator ─────────────────────────────── */
+        (function() {
+            const wrap = document.getElementById('hero-h1-wrap');
+            if (!wrap) return;
+            const slides = Array.from(wrap.querySelectorAll('.hero-slide'));
+            if (slides.length < 2) return;
+
+            function measureWrap() {
+                let maxH = 0;
+                slides.forEach(s => {
+                    s.style.cssText = 'position:relative !important; opacity:1 !important; transform:none !important; visibility:visible !important;';
+                    if (s.offsetHeight > maxH) maxH = s.offsetHeight;
+                    s.style.cssText = '';
+                });
+                wrap.style.height = (maxH + 32) + 'px';
+            }
+
+            measureWrap();
+
+            // Re-measure on resize (debounced)
+            let resizeTimer;
+            window.addEventListener('resize', function() {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(measureWrap, 100);
+            });
+
+            // Initial state: slide 0 visible at translateX(0), rest at translateX(100%)
+            slides.forEach((s, i) => {
+                if (i === 0) {
+                    s.classList.add('hero-slide--active');
+                    s.setAttribute('aria-hidden', 'false');
+                } else {
+                    s.classList.remove('hero-slide--active');
+                    s.setAttribute('aria-hidden', 'true');
+                }
+            });
+
+            let current = 0;
+            let busy = false;
+
+            function goToNext() {
+                if (busy) return;
+                busy = true;
+
+                const prev = current;
+                const next = (current + 1) % slides.length;
+                const prevSlide = slides[prev];
+                const nextSlide = slides[next];
+
+                // Exit prev to the left
+                prevSlide.classList.add('hero-slide--exit');
+                prevSlide.classList.remove('hero-slide--active');
+                prevSlide.setAttribute('aria-hidden', 'true');
+
+                // Enter next from the right
+                nextSlide.classList.add('hero-slide--active');
+                nextSlide.setAttribute('aria-hidden', 'false');
+
+                setTimeout(function() {
+                    // Reset prev: remove exit, back to waiting-on-right state
+                    prevSlide.classList.remove('hero-slide--exit');
+                    current = next;
+                    busy = false;
+                }, 600);
+            }
+
+            setInterval(goToNext, 5000);
+        })();
     </script>
 
 </body></html>

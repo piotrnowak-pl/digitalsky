@@ -1,10 +1,28 @@
 <!-- 1. Hero Section -->
-<section class="relative pt-32 pb-16 md:pt-48 md:pb-32 px-6 max-w-[1400px] mx-auto min-h-[90vh] flex flex-col justify-center overflow-hidden">
+<section class="relative pt-12 pb-2 md:pt-0 md:pb-12 px-6 max-w-[1400px] mx-auto min-h-[90vh] flex flex-col justify-center overflow-hidden mt-16 md:mt-0">
     <div class="animate-fade-up max-w-5xl relative z-10">
-        <h1 class="font-display text-5xl md:text-[5rem] lg:text-[5rem] tracking-tight font-medium leading-[0.97] mb-8">
-            <?= $t['hero']['h1'] ?> <br class="hidden md:block">
-            <span class="text-slate-400 dark:text-slate-600"><?= $t['hero']['h1_sub'] ?></span>
-        </h1>
+
+        <!-- H1 rotator — fixed height set by JS to prevent layout shift -->
+        <div id="hero-h1-wrap" class="relative mb-8" style="min-height:1px">
+            <?php
+            $slides = [
+                ['h1' => $t['hero']['h1'],   'sub' => $t['hero']['h1_sub']],
+                ['h1' => $t['hero']['h1_2'],  'sub' => $t['hero']['h1_sub_2']],
+                ['h1' => $t['hero']['h1_3'],  'sub' => $t['hero']['h1_sub_3']],
+            ];
+            foreach ($slides as $i => $slide):
+            ?>
+            <h1
+                class="hero-slide font-display text-[2.1rem] md:text-[5rem] lg:text-[5rem] tracking-tight font-medium leading-[1.05] md:leading-[0.97] [overflow-wrap:anywhere] <?= $i === 0 ? 'hero-slide--active' : '' ?>"
+                aria-hidden="<?= $i === 0 ? 'false' : 'true' ?>"
+                data-slide="<?= $i ?>"
+            >
+                <?= $slide['h1'] ?>
+                <div class="text-slate-400 dark:text-slate-600" style="margin-top:15px"><?= $slide['sub'] ?></div>
+            </h1>
+            <?php endforeach; ?>
+        </div>
+
         <p class="hero-desc text-base text-slate-500 dark:text-slate-400 max-w-4xl leading-relaxed mb-12 font-normal">
             <?= $t['hero']['p'] ?>
         </p>
@@ -40,7 +58,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Abstract background shape -->
     <div class="absolute top-1/2 right-0 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/20 dark:bg-blue-500/10 rounded-full blur-[120px] pointer-events-none -z-10"></div>
 </section>
