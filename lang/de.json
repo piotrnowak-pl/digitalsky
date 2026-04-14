@@ -22,7 +22,7 @@
     "cta2": "Referenzen ansehen",
     "trust1": "12+ umgesetzte Systeme",
     "trust2": "Durchschnittlich 300% Effizienzsteigerung",
-    "trust3": "KMU in EU &amp; USA seit 2016"
+    "trust3": "KMU in EU & USA seit 2016"
   },
   "problem": {
     "h2": "Ihr Unternehmen verdient bessere Software als Standardlösungen",
@@ -37,7 +37,7 @@
   "services": {
     "h2": "Lösungen, die wirklich funktionieren",
     "sub": "Wir verkaufen keine Stunden. Wir liefern automatisierte, zuverlässige Systeme — vollständig in Ihrem Besitz.",
-    "bento1_h": "Admin-Panels &amp; interne Tools",
+    "bento1_h": "Admin-Panels & interne Tools",
     "bento1_p": "Für Ihre exakten Arbeitsabläufe gebaut, nicht aus generischen Vorlagen. Verwalten Sie Daten sicher mit Oberflächen, die auf Geschwindigkeit und den Alltag Ihres Teams ausgelegt sind.",
     "bento2_h": "Maßgeschneiderte CRM-Systeme",
     "bento2_p": "Datenflüsse komplett um Ihre einzigartige Customer Journey herum gestaltet. Hören Sie auf, Ihr Geschäft in Salesforce-Schablonen zu pressen. Besitzen Sie ein CRM, das widerspiegelt, wie Sie wirklich verkaufen und betreuen.",
@@ -67,7 +67,7 @@
     "step2_p": "Konkrete Lösungsvorschläge mit klarer Architektur und testbaren Prototypen, die Sie bereits in der ersten Woche bewerten können.",
     "step3_h": "Entwicklung",
     "step3_p": "Iterative Lieferung mit Ihrem Feedback bei jedem Schritt. Sie sehen echten Fortschritt — keine Black Box, die sich erst nach Monaten öffnet.",
-    "step4_h": "Launch &amp; Skalierung",
+    "step4_h": "Launch & Skalierung",
     "step4_p": "Vollständiges SLA, Monitoring und kontinuierliche Produktentwicklung. Wir bleiben bei Ihnen — Support, Verbesserungen und Skalierung, während Sie wachsen.",
     "founder_h": "Gründer-geführte Umsetzung",
     "founder_p": "Sie arbeiten direkt mit dem Senior-Experten, der Ihre Lösung entwirft und entwickelt. Keine Account Manager, keine Junior-Übergaben, keine Missverständnisse. Nur Ergebnisse."
@@ -155,7 +155,7 @@
     "pillar1_p": "Leads automatisch bewertet. Follow-ups vorab entworfen. Kundenstimmung markiert, bevor Sie die E-Mail öffnen. Ihr CRM hört auf, eine Datenbank zu sein — und wird ein Assistent, der nie schläft.",
     "pillar2_h": "Prozessautomatisierung",
     "pillar2_p": "Dokumente klassifiziert. Rechnungen gelesen und weitergeleitet. Anomalien in Echtzeit erkannt. Die sich wiederholenden, regelbasierten Aufgaben, die Ihr Team fürchtet — übergeben an ein System, das sie schneller und ohne Fehler erledigt.",
-    "pillar3_h": "KI-Übersetzer &amp; Content",
+    "pillar3_h": "KI-Übersetzer & Content",
     "pillar3_p": "Kundenkommunikation, Produktbeschreibungen, interne Berichte — sofort mit kontextbewusstem KI übersetzt und lokalisiert. Nicht nur Worte ausgetauscht — Bedeutung in jeder Sprache erhalten, in der Ihr Unternehmen tätig ist.",
     "pillar4_h": "Prädiktive Analytik",
     "pillar4_p": "Nachfrageprognosen. Abwanderungssignale. Engpassvorhersagen. Heben Sie die Erkenntnisse aus Ihren eigenen Daten hervor — bevor das Problem zur Krise wird.",
@@ -171,7 +171,7 @@
     "node_ai": "KI-Engine",
     "node_docs": "Dokumente",
     "node_out1": "Automatische Aktionen",
-    "node_out2": "Erkenntnisse &amp; Warnungen",
+    "node_out2": "KI-Einblicke & Alerts",
     "node_out3": "Übersetzungen",
     "cta_h": "Bereit, KI wirklich arbeiten zu lassen — nicht nur auf einer Demo-Folie?",
     "cta_p": "Erzählen Sie uns von Ihrem größten manuellen Engpass. Wir zeigen Ihnen genau, wie KI ihn eliminieren kann.",

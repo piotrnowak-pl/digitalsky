@@ -8,11 +8,12 @@
         <p class="hero-desc text-xl md:text-3xl text-slate-500 dark:text-slate-400 max-w-3xl leading-relaxed mb-12 font-normal">
             <?= $t['hero']['p'] ?>
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 items-center mb-16">
-            <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center bg-[#2D2D2D] text-white text-lg font-medium py-4 px-8 rounded-[1rem] hover:bg-[#3a3a3a] hover:scale-105 transition-all duration-300">
+        <div class="flex flex-row flex-wrap gap-4 items-center justify-start mb-16">
+            <a href="#contact" class="inline-flex items-center justify-center bg-[#2D2D2D] text-white text-lg font-medium py-4 px-8 rounded-[1rem] hover:bg-[#3a3a3a] hover:scale-105 transition-all duration-300">
                 <?= $t['hero']['cta1'] ?>
             </a>
-            <a href="#work" class="w-full sm:w-auto inline-flex items-center justify-center text-slate-900 dark:text-white text-lg font-medium py-4 px-8 rounded-[1rem] hover:bg-slate-100 dark:hover:bg-white/5 transition-colors duration-300">
+            <a href="#work" class="inline-flex items-center justify-center gap-2 text-slate-700 dark:text-slate-300 text-lg font-medium py-4 px-8 rounded-[1rem] border border-slate-200 dark:border-white/10 hover:border-slate-400 dark:hover:border-white/25 hover:bg-slate-50 dark:hover:bg-white/5 transition-all duration-300">
+                <i data-lucide="play-circle" class="w-5 h-5 opacity-60"></i>
                 <?= $t['hero']['cta2'] ?>
             </a>
         </div>

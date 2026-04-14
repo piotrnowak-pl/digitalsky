@@ -22,7 +22,7 @@
     "cta2": "Voir les réalisations",
     "trust1": "12+ systèmes sur mesure livrés",
     "trust2": "300% de gain moyen en efficacité",
-    "trust3": "Au service des PME EU &amp; US depuis 2016"
+    "trust3": "Au service des PME EU & US depuis 2016"
   },
   "problem": {
     "h2": "Votre entreprise mérite mieux qu'un logiciel générique",
@@ -37,7 +37,7 @@
   "services": {
     "h2": "Des solutions qui fonctionnent vraiment",
     "sub": "Nous ne vendons pas des heures. Nous livrons des systèmes automatisés et fiables — entièrement détenus par votre entreprise.",
-    "bento1_h": "Panels d'administration &amp; outils internes",
+    "bento1_h": "Panels d'administration & outils internes",
     "bento1_p": "Construits pour vos processus exacts, pas à partir de modèles génériques. Gérez vos données en toute sécurité avec des interfaces conçues pour la rapidité et la réalité quotidienne de votre équipe.",
     "bento2_h": "Systèmes CRM sur mesure",
     "bento2_p": "Des flux de données conçus entièrement autour de votre parcours client unique. Arrêtez de forcer votre entreprise dans les cases de Salesforce. Possédez un CRM qui reflète vraiment comment vous vendez et servez.",
@@ -67,7 +67,7 @@
     "step2_p": "Des solutions concrètes avec une architecture claire, appuyées par des prototypes testables que vous pouvez évaluer dès la première semaine.",
     "step3_h": "Construction",
     "step3_p": "Livraison itérative avec vos retours à chaque étape. Vous voyez de vrais progrès — pas une boîte noire qui s'ouvre après des mois.",
-    "step4_h": "Lancement &amp; Montée en charge",
+    "step4_h": "Lancement & Montée en charge",
     "step4_p": "SLA complet, monitoring et évolution continue du produit. Nous restons avec vous — support, améliorations et montée en charge au fil de votre croissance.",
     "founder_h": "Réalisation dirigée par le fondateur",
     "founder_p": "Vous travaillez directement avec l'expert senior qui conçoit et construit votre solution. Pas de chefs de projet, pas de transmission à des juniors, pas de malentendus. Juste des résultats."
@@ -155,7 +155,7 @@
     "pillar1_p": "Leads scorés automatiquement. Relances rédigées. Sentiment client signalé avant même que vous ouvriez l'e-mail. Votre CRM cesse d'être une base de données — et devient un assistant qui ne dort jamais.",
     "pillar2_h": "Automatisation des processus",
     "pillar2_p": "Documents classifiés. Factures lues et acheminées. Anomalies détectées en temps réel. Les tâches répétitives et basées sur des règles que votre équipe redoute — confiées à un système qui les fait plus vite et sans erreurs.",
-    "pillar3_h": "Traducteurs IA &amp; Contenu",
+    "pillar3_h": "Traducteurs IA & Contenu",
     "pillar3_p": "Communications clients, descriptions de produits, rapports internes — traduits et localisés instantanément avec une IA sensible au contexte. Pas seulement des mots échangés — le sens préservé dans chaque langue dans laquelle votre entreprise opère.",
     "pillar4_h": "Analytique prédictive",
     "pillar4_p": "Prévisions de la demande. Signaux de désabonnement. Prédictions de goulots d'étranglement. Faites remonter les insights enfouis dans vos propres données — avant que le problème ne devienne une crise.",
@@ -171,7 +171,7 @@
     "node_ai": "Moteur IA",
     "node_docs": "Documents",
     "node_out1": "Actions automatisées",
-    "node_out2": "Insights &amp; Alertes",
+    "node_out2": "Insights & Alertes",
     "node_out3": "Traductions",
     "cta_h": "Prêt à faire vraiment travailler l'IA — pas seulement sur une diapositive de démo ?",
     "cta_p": "Parlez-nous de votre plus grand goulot d'étranglement manuel. Nous vous montrerons exactement comment l'IA peut l'éliminer.",
