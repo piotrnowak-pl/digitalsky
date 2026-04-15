@@ -2,10 +2,11 @@
 // ── Site config ────────────────────────────────────────────────
 $cfg = require __DIR__ . '/contact/config.php';
 
-// ── Base path (auto-detect subdirectory) ───────────────────────
-// Works at root (production) and in subdirectory (dev: /sky/digitalsky/)
+// ── Base URL (full domain) ─────────────────────────────────────
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+$host = $_SERVER['HTTP_HOST'];
 $scriptDir = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME']));
-$basePath  = rtrim($scriptDir, '/') . '/';   // e.g. "/" or "/sky/digitalsky/"
+$basePath = $protocol . '://' . $host . rtrim($scriptDir, '/') . '/';
 
 // ── Language detection ─────────────────────────────────────────
 // Rule: URL is the single source of truth.
@@ -54,7 +55,7 @@ if ($lang === 'en') {
 // ── Fix typographic widows ──────────────────────────────────────
 // Replaces the space after short words (1–3 chars) with &nbsp;
 // so they never hang alone at the start of a new line.
-function fix_widows(mixed $value): mixed {
+function fix_widows($value) {
     if (is_string($value)) {
         return preg_replace('/(\s)(\S{1,3})\s+/u', '$1$2&nbsp;', $value);
     }
