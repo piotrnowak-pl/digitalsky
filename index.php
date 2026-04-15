@@ -64,7 +64,8 @@ function fix_widows($value) {
     }
     return $value;
 }
-$t = fix_widows($t);
+
+//$t = fix_widows($t);
 
 // ── Canonical URL helper ───────────────────────────────────────
 $baseUrl = 'https://digitalsky.pl';
